@@ -1,0 +1,7 @@
+<h1>List of Cars</h1>
+
+<% @cars.each do |car| %>
+  <div>
+    <h2><%= car.make %> <%= car.model %> <%= car.year %></h2>
+  </div>
+<% end %>
