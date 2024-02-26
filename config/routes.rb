@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  post 'reviews/create'
+  get 'bookings', to: 'bookings#index'
+  get 'bookings/:id', to: 'bookings#show'
+  get 'cars/:id/bookings/new', to: 'bookings#new'
+  post 'cars/:id/bookings', to: 'bookings#create'
+  get 'bookings/:id/edit', to: 'bookings#edit'
+  patch 'bookings/:id', to: 'bookings#update'
+  delete 'bookings/:id', to: 'bookings#destroy'
   # get 'cars/index'
   # get 'cars/show'
   # get 'cars/new'
