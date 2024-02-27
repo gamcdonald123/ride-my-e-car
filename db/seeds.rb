@@ -15,7 +15,7 @@ User.destroy_all
 puts "Seeding..."
 puts "Creating users..."
 10.times do
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, dob: Faker::Date.birthday(min_age: 18, max_age: 65))
+  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "password")
 end
 
 puts "Creating cars..."
