@@ -1,7 +1,11 @@
-<h1>List of Cars</h1>
+<h1>🚗 🚙 🚘 List of Cars available to rent in your area 🚗 🚙 🚘 </h1>
 
 <% @cars.each do |car| %>
   <div>
-    <h2><%= car.make %> <%= car.model %> <%= car.year %></h2>
+      <h2> <%="#{car.make} #{car.model}" %> </h2>
+    <ul>
+      <li> <%= car.year %> </li>
+      <li>£<%=car.price %> </li>
+      <button> <%= link_to"view & book",car_path(car)%></button>
   </div>
 <% end %>
