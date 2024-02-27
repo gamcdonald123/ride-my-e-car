@@ -1,11 +1,21 @@
 <h1>🚗 🚙 🚘 List of Cars available to rent in your area 🚗 🚙 🚘 </h1>
 
 <% @cars.each do |car| %>
-  <div>
-      <h2> <%="#{car.make} #{car.model}" %> </h2>
-    <ul>
-      <li> <%= car.year %> </li>
-      <li>£<%=car.price %> </li>
-      <button> <%= link_to"view & book",car_path(car)%></button>
+    <div class="col-sm">
+<div class="container text-center">
+  <div class="row d-flex">
+<div class="card shadow p-3" style="width: 18rem;">
+ <img src="https://i.guim.co.uk/img/media/7d5dfcdf7a70afe5273fa65590fdb99fdcda1a97/0_89_3000_1800/master/3000.jpg?width=1200&quality=85&auto=format&fit=max&s=d9a6fc098390afea29a96f4c59da2adc" class="card-img-top" alt="...">
+ <div class="card-body">
+      <h2 class="card-title"> <%="#{car.make} #{car.model}" %> </h2>
+      <ul class="list-unstyled">
+        <li> Year: <%= car.year %> </li>
+        <li>Rate: £<%=car.price %> </li>
+        <button class="btn btn-primary"> <%= link_to"view & book",car_path(car), style: 'text-decoration:none;' %></button>
+        </ul>
+        </div>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
