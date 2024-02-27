@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'reviews/new'
   post 'reviews/create'
   get 'bookings', to: 'bookings#index'
