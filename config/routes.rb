@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  post 'reviews/create'
+  get 'bookings', to: 'bookings#index'
+  get 'bookings/:id', to: 'bookings#show'
+  get 'cars/:id/bookings/new', to: 'bookings#new'
+  post 'cars/:id/bookings', to: 'bookings#create'
+  get 'bookings/:id/edit', to: 'bookings#edit'
+  patch 'bookings/:id', to: 'bookings#update'
+  delete 'bookings/:id', to: 'bookings#destroy'
+  # get 'cars/index'
+  # get 'cars/show'
+  # get 'cars/new'
+  # get 'cars/create'
+  # get 'cars/edit'
+  # get 'cars/update'
+
   root to: "pages#home"
+
+  resources :cars
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
