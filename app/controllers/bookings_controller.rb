@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking_duration = (@booking.end_date - @booking.start_date)/60/60/24
   end
 
   def new
