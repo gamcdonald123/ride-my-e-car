@@ -10,7 +10,7 @@
       <div class="card" style="width: 18rem;">
         <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top img-fluid" alt="...">
         <div class="card-body">
-          <p class="card-text">Car</p>
+          <p class="card-text">Porche</p>
         </div>
       </div>
     </div>
@@ -32,6 +32,19 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+      <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search by city"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-dark" %>
+      <% end %>
   </div>
 </div>
 
