@@ -13,7 +13,7 @@
       <ul class="list-unstyled">
         <li> Year: <%= car.year %> </li>
         <li>Rate: £<%=car.price %> </li>
-        <button class="btn btn-primary"> <%= link_to"view & book",car_path(car), style: 'text-decoration:none;' %></button>
+        <%= link_to"View",car_path(car), class: "btn btn-dark" %>
         </ul>
         </div>
         </div>
