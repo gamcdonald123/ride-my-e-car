@@ -35,6 +35,19 @@
   </div>
 </div>
 
+<div class="row justify-content-center" >
+  <div class="col-sm-8 my-3">
+      <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search by city"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>
+
 <div class="front-page-info">
   <div class="about-us my-4 py-4 text-center text-md-left d-flex justify-content-end align-items-center">
     <p class="text-center px-4">Rent an electric car for your next adventure</p>
