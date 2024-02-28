@@ -14,6 +14,7 @@
           <li> <%= @car.location%></li>
           <li> <%= @car.seats%></li>
         </ul>
+   <%= link_to "Book Now", new_car_booking_path(@car), class: "btn btn-dark"%>
       </div>
     </div>
     <div class="w-100">
