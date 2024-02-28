@@ -1,2 +1,26 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="container">
+
+  <h1>You have booked:</h1>
+
+  <br>
+
+  <p>£<%= @booking.car.price %>/day</p>
+  <p>📍<%= @booking.car.location.capitalize %></p>
+  <p><strong>Category:</strong> <%= @booking.car.category.capitalize %></p>
+  <p><%= @booking.car.seats %> seats </p>
+
+  <p><strong>Start: </strong><%= @booking.start_date.strftime('%m/%d/%Y') %></p>
+  <p><strong>End: </strong><%= @booking.end_date.strftime('%m/%d/%Y') %></p>
+
+  <% start = @booking.start_date.strftime('%m/%d/%Y').to_i %>
+  <% end_date = @booking.end_date.strftime('%m/%d/%Y').to_i%>
+  <p><strong>Days:</strong> <%= end_date - start %> </p>
+  <p><strong>Total: </strong> £<%= (end_date - start) * @booking.car.price %></p>
+
+
+  <%# no need for edit and cancel for this project %>
+  <%# <%= link_to 'Edit', edit_booking_path %>
+  <%# <%= link_to 'Cancel', booking_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Back', bookings_path %>
+
+</div>
