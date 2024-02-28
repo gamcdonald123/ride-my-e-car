@@ -5,7 +5,7 @@
   <div class="row" style="gap: 1rem;">
     <% @cars.each do |car| %>
       <div class="col-6 col-lg-3 card shadow p-3" style="width: 18rem;">
-        <img src="https://i.guim.co.uk/img/media/7d5dfcdf7a70afe5273fa65590fdb99fdcda1a97/0_89_3000_1800/master/3000.jpg?width=1200&quality=85&auto=format&fit=max&s=d9a6fc098390afea29a96f4c59da2adc" class="card-img-top" alt="...">
+        <img src="<%= car.image_url %>" class="card-img-top" alt="...">
         <div class="card-body">
           <h3 class="card-title"> <%="#{car.make} #{car.model}" %> </h3>
           <ul class="list-unstyled">
