@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <%= render "shared/navbar" %>
-    <%= yield %>
+    <div class="flex-grow-1">
+      <%= yield %>
+
+    </div>
     <%= render "shared/footer" %>
     <%= render "shared/flashes" %>
   </body>
