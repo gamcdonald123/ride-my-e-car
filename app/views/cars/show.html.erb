@@ -1,22 +1,24 @@
 
-<div class="card mb-3 shadow p-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
+<div class="container card mb-3 shadow p-3" >
+  <div class="d-flex g-0">
+    <div class="col-md-5">
       <img src="https://i.guim.co.uk/img/media/7d5dfcdf7a70afe5273fa65590fdb99fdcda1a97/0_89_3000_1800/master/3000.jpg?width=1200&quality=85&auto=format&fit=max&s=d9a6fc098390afea29a96f4c59da2adc" class="img-fluid float-start" alt="...">
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
+    <div class="col-md-6">
+      <div class="card-body margin-left:100px;">
         <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
-  <ul class="list-unstyled card-text">
-    <li> <%= @car.year %> </li>
-    <li>£<%= @car.price %> </li>
-    <li> <%= @car.category%></li>
-    <li> <%= @car.location%></li>
-    <li> <%= @car.seats%></li>
-  </ul>
+        <ul class="list-unstyled card-text">
+          <li> <%= @car.year %> </li>
+          <li>£<%= @car.price %> </li>
+          <li> <%= @car.category%></li>
+          <li> <%= @car.location%></li>
+          <li> <%= @car.seats%></li>
+        </ul>
    <%= link_to "Book Now", new_car_booking_path(@car), class: "btn btn-dark"%>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
       </div>
+    </div>
+    <div class="w-100">
+      <button class="btn btn-dark me-md-2 ">book now</button>
     </div>
   </div>
 </div>
