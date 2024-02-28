@@ -14,7 +14,7 @@
     <li> <%= @car.location%></li>
     <li> <%= @car.seats%></li>
   </ul>
-    <button class="btn btn-primary">book now</button>
+   <%= link_to "Book Now", new_car_booking_path(@car), class: "btn btn-dark"%>
         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
       </div>
     </div>

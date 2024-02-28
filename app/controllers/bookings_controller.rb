@@ -2,22 +2,25 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    # booking.all to be swapped with current_user.bookings once user is created
-    @bookings = Booking.all
-    # @bookings = current_user.bookings
+    # @bookings = Booking.all
+    @bookings = current_user.bookings
   end
 
   def show
   end
 
   def new
-    @booking = Booking.new(booking_params)
+    @car = Car.find(params[:car_id])
+    @booking = Booking.new()
   end
 
   def create
+    @car = Car.find(params[:car_id])
     @booking = Booking.new(booking_params)
+    @booking.car = @car
+    @booking.user = current_user
     if @booking.save
-      redirect_to new_booking_path(@booking)
+      redirect_to booking_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
@@ -42,7 +45,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id, :car_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_booking

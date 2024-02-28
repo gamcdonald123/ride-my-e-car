@@ -1,11 +1,14 @@
-<div class="container mt-3">
+<div class="container p-5 border border-dark border-3">
   <h1><i class="fa-solid fa-car"></i> Your e-rides</h1>
 
   <br>
-  <ul>
- <% @bookings.each do |booking| %>
-  <li><%= link_to "#{booking.start_date.strftime('%m/%d/%Y')} - #{booking.end_date.strftime('%m/%d/%Y')}", booking_path(booking) %></li>
-<% end %>
-  </ul>
-
+<ul class="list-unstyled">
+  <% @bookings.each do |booking| %>
+    <li class="p-2">
+      <div class="booking border m-3 p-2border-3 shadow p-3 mb-3 bg-body rounded">
+        Booking details:  <%= link_to "#{booking.start_date.strftime('%d/%m/%Y')} - #{booking.end_date.strftime('%d/%m/%Y')}", booking_path(booking), class: 'text-decoration-none text-dark bg-light' %>
+      </div>
+    </li>
+  <% end %>
+</ul>
 </div>
