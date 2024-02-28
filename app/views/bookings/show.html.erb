@@ -4,9 +4,8 @@
 
   <br>
     <div class="card border border-dark border-2 rounded-2 shadow p-3 mb-5 bg-body rounded" style="width: 30rem;">
-      <img src="https://www.lincoln.com/is/image/content/dam/brand_lincoln/en_us/brand/dm/mkz-sunset/MKZ_1Up.tif?croppathe=1_3x2&wid=900" class="card-img-top" alt="...">
+      <%= image_tag @booking.car.image_url, class: "card-img-top", alt: "..." %>
       <div class="card-body">
-
         <div class="d-flex justify-content-between text-align-center">
           <h3 class="card-title"><strong><%= @booking.car.model.capitalize %></strong> </h3>
           <h5 class="mt-1">📍<%= @booking.car.location.capitalize %></h5>
