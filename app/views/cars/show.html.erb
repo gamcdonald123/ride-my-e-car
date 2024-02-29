@@ -9,7 +9,7 @@
         <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
         <ul class="list-unstyled card-text">
           <li> <%= @car.year %> </li>
-          <li>£<%= @car.price %> </li>
+          <li> <%= number_to_currency(@car.price.round(1), unit: "£") %> </li>
           <li> <%= @car.category%></li>
           <li> <%= @car.location%></li>
           <li> <%= @car.seats%></li>
