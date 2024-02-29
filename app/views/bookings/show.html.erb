@@ -23,7 +23,7 @@
               </div>
 
                 <p><strong>Days:</strong> <%= @booking_duration.to_i %> </p>
-                <p><strong>Total: </strong> £<%= @booking_duration * @booking.car.price %>0</p>
+                <p><strong>Total: </strong> £<%= @booking_duration * @booking.car.price.round(1) %>0</p>
             </p>
             </div>
       </div>
