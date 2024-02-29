@@ -1,20 +1,31 @@
 
 <div class="container card mb-3 shadow p-3" >
-  <div class="d-flex g-0">
-    <div class="col-md-5">
-      <%= image_tag @car.image_url, class: "img-fluid float-start", alt: "..." %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= image_tag @car.image_url, class: "img-fluid float-start height-auto", alt: "..." %>
     </div>
     <div class="col-md-6">
-      <div class="card-body margin-left:100px;">
-        <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
-        <ul class="list-unstyled card-text">
-          <li> <%= @car.year %> </li>
-          <li> <%= number_to_currency(@car.price.round(1), unit: "£") %> </li>
-          <li> <%= @car.category%></li>
-          <li> <%= @car.location%></li>
-          <li> <%= @car.seats%></li>
-        </ul>
-        <%= link_to "Book Now", new_car_booking_path(@car), class: "btn btn-dark"%>
+      <div class='d-flex flex-column justify-content-between h-100'>
+        <div class="d-flex align-items-end justify-content-between">
+          <div>
+            <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
+            <h5 class="mt-4">📍<%= @car.location.capitalize %></h5>
+            <p>🚘 <%= @car.category.capitalize %></p>
+            <p>💺 <%= @car.seats %></p>
+          </div>
+          <div>
+            <p>👉🏼 <%= @car.price %>/day</p>
+            <p>👉🏼<%= @car.category %></p>
+            <p>👉🏼<%= @car.year %></p>
+          </div>
+        </div>
+        <div class="border border-black p-3 rounded">
+        <%= simple_form_for [@car, @booking] do |f|%>
+          <%= f.input :start_date, html5: true %>
+          <%= f.input :end_date, html5: true  %>
+          <%= f.submit class: "btn btn-dark btn-md btn-block" %>
+        <% end %>
+          </div>
       </div>
     </div>
   </div>
