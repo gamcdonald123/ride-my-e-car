@@ -13,7 +13,8 @@
 
           <p>🚘 <%= @booking.car.category.capitalize %></p>
           <p>💺 <%= @booking.car.seats %></p>
-          <p>👉🏼 <%= @booking.car.price %>/day</p>
+          <p>👉🏼 <%= number_to_currency(@booking.car.price.round(1), unit: "£") %>/day</p>
+
 
             <p class="card-text">
               <div class="d-flex justify-content-between pt-3">
@@ -22,7 +23,7 @@
               </div>
 
                 <p><strong>Days:</strong> <%= @booking_duration.to_i %> </p>
-                <p><strong>Total: </strong> £<%= @booking_duration * @booking.car.price %></p>
+                <p><strong>Total: </strong> £<%= @booking_duration * @booking.car.price.round(1) %>0</p>
             </p>
             </div>
       </div>
