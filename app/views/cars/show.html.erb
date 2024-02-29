@@ -1,31 +1,32 @@
 
 <div class="container card mb-3 shadow p-3" >
   <div class="row">
-    <div class="col-md-6">
-      <%= image_tag @car.image_url, class: "img-fluid float-start height-auto", alt: "..." %>
+    <div class="col-md-8">
+      <%= image_tag @car.image_url, class: "float-start car-img", alt: "..." %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class='d-flex flex-column justify-content-between h-100'>
-        <div class="d-flex align-items-end justify-content-between">
-          <div>
-            <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
-            <h5 class="mt-4">📍<%= @car.location.capitalize %></h5>
-            <p>🚘 <%= @car.category.capitalize %></p>
-            <p>💺 <%= @car.seats %></p>
-          </div>
-          <div>
-            <p>👉🏼 <%= @car.price %>/day</p>
-            <p>👉🏼<%= @car.category %></p>
-            <p>👉🏼<%= @car.year %></p>
+        <div>
+          <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
+          <h4 class="mb-5"><i class="fa-solid fa-location-dot"> </i> <%= @car.location.capitalize %> </h4>
+          <div class="d-flex align-items-end justify-content-start w-100">
+            <div class="me-5">
+              <p><i class="fa-solid fa-car"> </i> <%= @car.category.capitalize %> </p>
+              <p><i class="fa-solid fa-chair"> </i> <%= @car.seats %> </p>
+            </div>
+            <div>
+              <p> <i class="fa-solid fa-money-bill"></i>  £<%= @car.price %>/day</p>
+              <p><i class="fa-solid fa-calendar-days"></i>    <%= @car.year %></p>
+            </div>
           </div>
         </div>
         <div class="border border-black p-3 rounded">
-        <%= simple_form_for [@car, @booking] do |f|%>
-          <%= f.input :start_date, html5: true %>
-          <%= f.input :end_date, html5: true  %>
-          <%= f.submit class: "btn btn-dark btn-md btn-block" %>
-        <% end %>
-          </div>
+          <%= simple_form_for [@car, @booking] do |f|%>
+            <%= f.input :start_date, html5: true %>
+            <%= f.input :end_date, html5: true  %>
+            <%= f.submit class: "btn btn-dark btn-md btn-block" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
