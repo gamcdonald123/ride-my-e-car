@@ -5,7 +5,11 @@
         <% @cars.each do |car| %>
           <div class="col-lg-4 mb-4">
             <div class="card shadow p-3">
-              <%= image_tag car.image_url, class: "card-img-top", style: "height: 9rem; object-fit: cover;" %>
+              <% if car.image_url %>
+                <%= image_tag car.image_url, class: "card-img-top", style: "height: 9rem; object-fit: cover;" %>
+              <% else %>
+              <%= image_tag("default_img.jpeg") %>
+              <% end %>
               <div class="card-body">
                 <h3 class="card-title"> <%="#{car.make} #{car.model}" %> </h2>
 

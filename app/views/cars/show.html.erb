@@ -2,7 +2,11 @@
 <div class="container card mb-3 shadow p-3" >
   <div class="row">
     <div class="col-md-8">
-      <%= image_tag @car.image_url, class: "float-start car-img", alt: "..." %>
+      <% if @car.image_url %>
+        <%= image_tag @car.image_url, class: "float-start car-img" %>
+      <% else %>
+      <%= image_tag("default_img.jpeg") %>
+      <% end %>
     </div>
     <div class="col-md-4">
       <div class='d-flex flex-column justify-content-between h-100'>

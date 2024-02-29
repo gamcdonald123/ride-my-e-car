@@ -1,4 +1,6 @@
 class Car < ApplicationRecord
+  belongs_to :user
+  validates :image, presence:true
   has_many :bookings
   has_many :reviews, through: :bookings
   geocoded_by :location
