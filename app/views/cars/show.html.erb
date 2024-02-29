@@ -2,18 +2,26 @@
   <div class="row">
 
     <div class="col-md-8">
-      <%# <%= image_tag @car.image_url, class: "float-start car-img", alt: "..." %>
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= image_tag("#{@car.image_url}", alt: "...", class: "d-block w-100 float-start car-img") %>
-          </div>
-          <div class="carousel-item">
-            <%= image_tag("#{@car.image_url}", alt: "...", class: "d-block w-100 float-start car-img") %>
-          </div>
-          <div class="carousel-item">
-            <%= image_tag("#{@car.image_url}", alt: "...", class: "d-block w-100 float-start car-img") %>
+      <% if @car.image_url %>
+        <%= image_tag @car.image_url, class: "float-start car-img" %>
+      <% else %>
+      <%= image_tag("default_img.jpeg") %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <div class='d-flex flex-column justify-content-between h-100'>
+        <div>
+          <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
+          <h4 class="mb-5"><i class="fa-solid fa-location-dot"> </i> <%= @car.location.capitalize %> </h4>
+          <div class="d-flex align-items-end justify-content-start w-100">
+            <div class="me-5">
+              <p><i class="fa-solid fa-car"> </i> <%= @car.category.capitalize %> </p>
+              <p><i class="fa-solid fa-chair"> </i> <%= @car.seats %> </p>
+            </div>
+            <div>
+              <p> <i class="fa-solid fa-money-bill"></i>  £<%= @car.price %>/day</p>
+              <p><i class="fa-solid fa-calendar-days"></i>    <%= @car.year %></p>
+            </div>
           </div>
         </div>
 
