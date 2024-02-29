@@ -67,10 +67,16 @@
 </div>
 
 <div class="container">
+  <h3>Reviews</h3>
+  <% @car.reviews.each do |review| %>
+    <p><%= review.comment %></p>
+    <p>Rating: <%= review.rating %></p>
+  <% end %>
+
   <h1>Add a review</h1>
   <%= simple_form_for [@car, @review] do |f|%>
   <%= f.input :comment %>
   <%= f.input :rating, collection: 1..5 %>
-  <%= f.button :submit %>
+  <%= f.submit %>
   <% end %>
 </div>
