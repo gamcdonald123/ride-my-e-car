@@ -4,9 +4,9 @@
   <br>
 <ul class="list-unstyled">
   <% @bookings.each do |booking| %>
+      <div class="booking border m-3 p-2 border-3 shadow p-3 mb-3 bg-body rounded">
     <li class="p-2">
-      <div class="booking border m-3 p-2border-3 shadow p-3 mb-3 bg-body rounded">
-        Booking details:  <%= link_to "#{booking.start_date.strftime('%d/%m/%Y')} - #{booking.end_date.strftime('%d/%m/%Y')}", booking_path(booking), class: 'text-decoration-none text-dark bg-light' %>
+       <p> <strong> Booking details: </strong></p> <%= link_to "#{booking.start_date.strftime('%d/%m/%Y')} - #{booking.end_date.strftime('%d/%m/%Y')}", booking_path(booking), class: 'text-decoration-none text-dark bg-light' %>
       </div>
     </li>
   <% end %>
