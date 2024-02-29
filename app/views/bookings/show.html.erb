@@ -8,7 +8,7 @@
       <div class="card-body">
         <div class="d-flex justify-content-between text-align-center">
           <h3 class="card-title"><strong><%= @booking.car.model.capitalize %></strong> </h3>
-          <h5 class="mt-1">📍<%= @booking.car.location.capitalize %></h5>
+          <h5 class="mt-1"><i class="fa-regular fa-location-dot"><%= @booking.car.location.capitalize %></h5></i>
         </div>
 
           <p>🚘 <%= @booking.car.category.capitalize %></p>
