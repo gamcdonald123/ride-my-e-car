@@ -4,6 +4,14 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        cars.make @@ :query
+        OR cars.model @@ :query
+        OR cars.location @@ :query
+      SQL
+      @cars = @cars.where(sql_subquery, query: "%#{params[:query]}%")
+    end
 
     @markers = @cars.geocoded.map do |car|
       {
