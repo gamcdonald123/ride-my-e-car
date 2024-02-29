@@ -13,3 +13,9 @@ h4.mapboxgl-popup-content {
   font-size: 1em;
   font-weight: 600;
 }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 10px;
+}
