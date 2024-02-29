@@ -11,9 +11,9 @@
           <h5 class="mt-1"><i class="fa-regular fa-location-dot"><%= @booking.car.location.capitalize %></h5></i>
         </div>
 
-          <p>🚘 <%= @booking.car.category.capitalize %></p>
-          <p>💺 <%= @booking.car.seats %></p>
-          <p>👉🏼 <%= number_to_currency(@booking.car.price.round(1), unit: "£") %>/day</p>
+          <p>Category: <%= @booking.car.category.capitalize %></p>
+          <p>Seats: <%= @booking.car.seats %></p>
+          <p> <%= number_to_currency(@booking.car.price.round(1), unit: "£") %>/day</p>
 
 
             <p class="card-text">
