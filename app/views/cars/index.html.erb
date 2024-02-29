@@ -1,22 +1,27 @@
 <div class="header text-center">
 <h3 class="p-3 bg-black bg-opacity-10 border border-start-0 rounded-end mb-3">List of Cars available to rent in your area:</h3>
 </div>
+
 <div class="container text-center">
   <div class="row d-flex">
+
     <% @cars.each do |car| %>
       <div class="col-lg-3 mb-4">
         <div class="card shadow p-3" style="width: 18rem;">
           <%= image_tag car.image_url, class: "card-img-top", style: "height: 9rem; object-fit: cover;" %>
           <div class="card-body">
             <h3 class="card-title"> <%="#{car.make} #{car.model}" %> </h2>
+
             <ul class="list-unstyled">
-              <li> Year: <%= car.year %> </li>
-              <li>Rate: £<%=car.price %> </li>
-              <%= link_to"View",car_path(car), class: "btn btn-dark" %>
+              <li class="p-2"><%= car.year %> </li>
+              <li class="p-2"><%= number_to_currency(car.price.round(1), unit: "£")%>/day </li>
+              <%= link_to"View",car_path(car), class: "view-btn btn btn-dark px-5 mt-3" %>
             </ul>
+
           </div>
         </div>
       </div>
     <% end %>
+
   </div>
 </div>
