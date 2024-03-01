@@ -4,10 +4,10 @@
       <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
               params[:query],
-              class: "form-control m-1",
+              class: "form-control",
               placeholder: "Search by make, model or location"
           %>
-        <%= submit_tag "Search", name: "", class: "btn btn-dark m-1" %>
+        <%= submit_tag "Search", name: "", class: "btn btn-dark" %>
       <% end %>
   </div>
 </div>
@@ -20,24 +20,24 @@
           </div>
         <% end %>
         <% @cars.each do |car| %>
-          <div class="col-lg-4 mb-4">
-            <div class="card shadow p-3">
+          <div class="col-lg-4 justify-content-center mb-4">
+            <div class="card shadow justify-content-center">
               <% if car.photos.attached? %>
                 <%= cl_image_tag(car.photos.first.key, :height => 300, :crop => :fit, :class => "card-img-top") %>
                 <% else %>
               <%= image_tag("default_img.jpeg") %>
               <% end %>
-              <div class="card-body">
-                <h3 class="card-title"> <%="#{car.make} #{car.model}" %> </h2>
-
+              <div class="card-body mx-auto p-3 justify-content-center">
+                <h4 class="card-title"> <%="#{car.make} #{car.model}" %> </h4 >
+                    <div class ="mx-auto p-2">
                 <ul class="list-unstyled">
-                  <li class="p-2"><%= car.year %> </li>
-                  <% if car.price %>
-                    <li class="p-2"><%= number_to_currency(car.price.round(1), unit: "£")%>/day </li>
-                  <% end %>
-                  <%= link_to"View",car_path(car), class: "view-btn btn btn-dark px-5 mt-3" %>
+                  <li class="p-1"><i class="fa-solid fa-calendar-days"></i> <%= car.year %> </li>
+                  <li class="p-1"><i class="fa-solid fa-money-bill"></i>  <%= number_to_currency(car.price.round(1), unit: "£")%>/day </li>
+                  <div class= "mx-auto p-2">
+                  <%= link_to"View",car_path(car), class: "view-btn btn btn-dark px-5 mt-3 " %>
+                  </div>
                 </ul>
-
+                  </div>
               </div>
             </div>
           </div>

@@ -41,6 +41,17 @@ car_images = [
   "https://res.cloudinary.com/djqkw5dd4/image/upload/v1709130243/swansway-motor-group-jrqnnic-NDk-unsplash_gokzrj.jpg"
 ]
 
+car_model = [
+  # models of eletric cars
+  "Tesla Model 3", "Hyundai Ioniq 5", "Audi Q6 e-tron", "BMW i4", "BYD Dolphin",
+  "BMW i7", "Dacia Spring", "Fiat 500", "Volkswagen ID4", "Škoda Enyaq",
+  "Nissan Leaf", "Polestar 2", "Porsche Taycan", "Hyundai Kona", "Lucid Air",
+  "Volvo EX30", "Aiways U5", "Volvo EX30", "Renault 5", "Rolls-Royce Spectre"
+]
+
+car_make = [
+  "", "", "", "", "","", "", "", "", "","", "", "", "", "", "", "", "", "", ""
+]
 puts "Seeding..."
 puts "Creating users..."
 10.times do
@@ -52,7 +63,10 @@ User.create(first_name: "Guy", last_name: "McDonald", email: "gamcdonald@icloud.
 puts "Creating cars..."
 
 20.times do
-  Car.create(price: Faker::Commerce.price(range: 20..50.0), location: postcodes_in_london.sample + ", London", category: %w[4x4 hatchback estate].sample, seats: [2, 5, 7].sample, user_id: User.all.sample.id, make: Faker::Vehicle.make, model: Faker::Vehicle.model, year: Faker::Vehicle.year)
+  Car.create(price: Faker::Commerce.price(range: 20..50.0), location: postcodes_in_london.sample + ", London",
+  category: %w[4x4 hatchback estate].sample,
+  seats: [2, 5, 7].sample, user_id: User.all.sample.id, make: car_make.sample,
+  model: car_model.sample, year: Faker::Vehicle.year)
 end
 
 puts "Adding images to cars..."

@@ -35,8 +35,9 @@
         <%= link_to "Edit car", edit_car_path, class: "text-white text-decoration-none" %>
       </button>
     </div>
+
     <div class="col-md-4">
-      <div class='d-flex flex-column justify-content-center h-100'>
+      <div class='d-flex flex-column justify-content-between h-100'>
         <div>
           <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
           <h4 class="mb-5"><i class="fa-solid fa-location-dot"> </i> <%= @car.location.upcase %> </h4>
@@ -51,6 +52,7 @@
             </div>
           </div>
         </div>
+
         <div class="border border-black p-3 rounded">
           <%= simple_form_for [@car, @booking] do |f|%>
             <%= f.input :start_date, html5: true %>
@@ -59,6 +61,7 @@
           <% end %>
         </div>
       </div>
+
     </div>
   </div>
   </div>

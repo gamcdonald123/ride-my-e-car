@@ -1,30 +1,35 @@
 <div class="container mt-3 p-3 mb-2 bg-light text-dark">
 
-  <h1><i class="fa-solid fa-car"></i> Your e-rides</h1>
+  <h1><i class="fa-solid fa-car"></i> Your e-Ride</h1>
 
   <br>
     <div class="card border border-dark border-2 rounded-2 shadow p-3 mb-5 bg-body rounded" style="width: 30rem;">
       <%= cl_image_tag @booking.car.photos, class: "card-img-top", alt: "..." %>
       <div class="card-body">
+
         <div class="d-flex justify-content-between text-align-center">
-          <h3 class="card-title"><strong><%= @booking.car.model.capitalize %></strong> </h3>
-          <h5 class="mt-1"><i class="fa-regular fa-location-dot"><%= @booking.car.location.capitalize %></h5></i>
+          <h3 class="card-title "><strong><%= @booking.car.model.capitalize %></strong> </h3>
+          <h5 class="mt-1"><i class="fa-solid fa-location-dot"> </i> <%= @booking.car.location.upcase %></h5></i>
         </div>
+          <br>
 
-          <p>Category: <%= @booking.car.category.capitalize %></p>
-          <p>Seats: <%= @booking.car.seats %></p>
-          <p> <%= number_to_currency(@booking.car.price.round(1), unit: "£") %>/day</p>
+          <div class="info d-flex justify-content-between">
+          <p><strong>Category: </strong><%= @booking.car.category.capitalize %></p>
+          <p><strong>Seats: </strong><%= @booking.car.seats %></p>
+           </div>
 
-
-            <p class="card-text">
-              <div class="d-flex justify-content-between pt-3">
-                <p><strong>Start: </strong><%= @booking.start_date.strftime('%d/%m/%Y') %></p>
-                <p><strong>End: </strong><%= @booking.end_date.strftime('%d/%m/%Y') %></p>
+            <%# <p class="card-text"> %>
+              <div class="d-flex justify-content-between">
+                <p><strong>Pick me: </strong><%= @booking.start_date.strftime('%d/%m/%Y') %></p>
+                <p><strong>Drop me: </strong><%= @booking.end_date.strftime('%d/%m/%Y') %></p>
               </div>
 
                 <p><strong>Days:</strong> <%= @booking_duration.to_i %> </p>
-                <p><strong>Total: </strong> £<%= @booking_duration * @booking.car.price.round(1) %>0</p>
-            </p>
+                <%# <p><em><%= number_to_currency(@booking.car.price.round(1), unit: "£") %>
+                <p><strong>Total: </strong>£<%= @booking_duration * @booking.car.price.round(1) %>0</p>
+            <%# </p> %>
+
+
             </div>
       </div>
 
