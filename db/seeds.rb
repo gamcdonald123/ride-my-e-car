@@ -71,10 +71,10 @@ end
 
 puts "Adding images to cars..."
 
-# Car.all.each_with_index do |car, index|
-#   # car.image_url = car_images[index]
-#   car.save
-# end
+Car.all.each_with_index do |car, index|
+  car.image_url = car_images[index]
+  car.save
+end
 
 50.times do
   Booking.create(start_date: Faker::Date.between(from: 1.week.from_now, to: 3.month.from_now), end_date: Faker::Date.between(from: 3.month.from_now, to: 6.month.from_now), user_id: User.all.sample.id, car_id: Car.all.sample.id)
