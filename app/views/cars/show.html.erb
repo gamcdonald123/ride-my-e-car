@@ -13,16 +13,20 @@
             <%= image_tag("default_img.jpeg") %>
             <% end %>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item active justify-content-center">
             <% if @car.photo %>
-            <%= cl_image_tag @car.photo.key, height: 400, crop: :fill %>
+            <div class="car-image d-flex align-items-center justify-content-center">
+              <%= cl_image_tag @car.photo.key, :height => 400, :crop => "pad" %>
+            </div>
             <% else %>
             <%= image_tag("default_img.jpeg") %>
             <% end %>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item active justify-content-center">
             <% if @car.photo %>
-            <%= cl_image_tag @car.photo.key, height: 400, crop: :fill %>
+            <div class="car-image d-flex align-items-center justify-content-center">
+              <%= cl_image_tag @car.photo.key, :height => 400, :crop => "pad" %>
+            </div>
             <% else %>
             <%= image_tag("default_img.jpeg") %>
             <% end %>
@@ -46,7 +50,7 @@
       </button>
     </div>
     <div class="col-md-4">
-      <div class='d-flex flex-column justify-content-between h-100'>
+      <div class='d-flex flex-column justify-content-center h-100'>
         <div>
           <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
           <h4 class="mb-5"><i class="fa-solid fa-location-dot"> </i> <%= @car.location.capitalize %> </h4>
