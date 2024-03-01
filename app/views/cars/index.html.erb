@@ -22,8 +22,8 @@
         <% @cars.each do |car| %>
           <div class="col-lg-4 mb-4">
             <div class="card shadow p-3">
-              <% if car.image_url %>
-                <%= image_tag car.image_url, class: "card-img-top", style: "height: 9rem; object-fit: cover;" %>
+              <% if car.photos? %>
+                <%= cl_image_tag(car.photos[0], height: 9, crop: :fill, class: "card-img-top") %>
               <% else %>
               <%= image_tag("default_img.jpeg") %>
               <% end %>

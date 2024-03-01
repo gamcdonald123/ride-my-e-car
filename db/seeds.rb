@@ -47,7 +47,7 @@ puts "Creating users..."
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "password")
 end
 
-User.create(first_name: "Guy", last_name: "McDonald", email: "gamcdonald@icloud.com", password: "password")
+User.create(first_name: "Guy", last_name: "McDonald", email: "gamcdonald@icloud.com", password: "password", postcode: "N5 1QZ")
 
 puts "Creating cars..."
 
@@ -57,10 +57,10 @@ end
 
 puts "Adding images to cars..."
 
-Car.all.each_with_index do |car, index|
-  car.image_url = car_images[index]
-  car.save
-end
+# Car.all.each_with_index do |car, index|
+#   # car.image_url = car_images[index]
+#   car.save
+# end
 
 50.times do
   Booking.create(start_date: Faker::Date.between(from: 1.week.from_now, to: 3.month.from_now), end_date: Faker::Date.between(from: 3.month.from_now, to: 6.month.from_now), user_id: User.all.sample.id, car_id: Car.all.sample.id)

@@ -4,12 +4,11 @@
       <div class="bg-white rounded p-3 shadow">
         <h3>Add your car to our app <%= @car.model %></h3>
         <%= simple_form_for [@car] do |f| %>
-          <%= f.input :make %>
           <%= f.input :model%>
           <%= f.input :seats%>
           <%= f.input :year%>
           <%= f.input :category%>
-          <%= f.input :photo, as: :file %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.input :price%>
           <%= f.submit class: "btn btn-dark" %>
         <% end %>
