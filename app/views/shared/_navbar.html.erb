@@ -4,22 +4,24 @@
       <%# <%= image_tag "https://res.cloudinary.com/djqkw5dd4/image/upload/v1709049954/power-supply_bgdbpz.png", style: "height: 20px;" %>
     <%# <% end %>
     <%# <div class="d-flex justify-content-center"> %>
-      <h1 class="mb-4 display-3"> <strong><%= link_to "Ride My e-Car", root_path, class: "black-link" %></strong> </h1>
+      <h1 class=""> <strong><%= link_to "Ride My e-Car", root_path, class: "black-link" %></strong> </h1>
     <%# </div> %>
 
+
       <ul class="navbar-nav">
+       <div class="commands d-flex">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
+          <%# <li class="nav-item active"> %>
+            <%# <%= link_to "Home", root_path, class: "nav-link" %>
+          <%# </li> %>
+          <li class="nav-item active mt-3">
             <%= link_to "Cars", cars_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mt-3">
             <%= link_to "Bookings", bookings_path, class: "nav-link" %>
           </li>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown mt-1">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="m-1">
                 <% if current_user.avatar.attached? %>
@@ -49,6 +51,8 @@
             <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
           </li>
         <% end %>
-      </ul>
+</div>
+    </ul>
+
   </div>
 </div>
