@@ -34,6 +34,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.user = current_user
+    @car.location = current_user.postcode.capitalize
     if @car.save
       redirect_to car_path(@car)
     else
@@ -42,6 +43,8 @@ class CarsController < ApplicationController
   end
 
   def edit
+    @car = Car.find(params[:id])
+
   end
 
   def update
@@ -60,7 +63,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:make, :model, :year, :price, :mileage, :location, :category, :seats, :image_url, :user_id)
+    params.require(:car).permit(:make, :model, :year, :price, :mileage, :location, :category, :seats, :photo, :user_id)
   end
 
   def set_car
