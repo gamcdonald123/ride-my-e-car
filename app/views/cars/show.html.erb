@@ -6,9 +6,9 @@
         <div class="carousel-inner">
           <div class="carousel-item active justify-content-center">
             <% if @car.photo %>
-            <div class="car-image d-flex align-items-center justify-content-center">
-              <%= cl_image_tag @car.photo.key, :height => 400, :crop => "pad" %>
-            </div>
+              <div class="car-image d-flex align-items-center justify-content-center">
+                <%= cl_image_tag @car.photo.key, :height => 400, :crop => "pad" %>
+              </div>
             <% else %>
             <%= image_tag("default_img.jpeg") %>
             <% end %>
