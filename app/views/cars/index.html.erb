@@ -4,10 +4,10 @@
       <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
               params[:query],
-              class: "form-control",
+              class: "form-control m-1",
               placeholder: "Search by make, model or location"
           %>
-        <%= submit_tag "Search", name: "", class: "btn btn-dark" %>
+        <%= submit_tag "Search", name: "", class: "btn btn-dark m-1" %>
       <% end %>
   </div>
 </div>
