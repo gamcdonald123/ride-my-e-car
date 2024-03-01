@@ -8,6 +8,8 @@
 
       <%= f.input :email, required: true, autofocus: true %>
 
+      <%= f.input :postcode, required: true %>
+
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
@@ -23,6 +25,7 @@
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
+
     </div>
       <div class="form-actions">
           <%= f.button :submit, "Update", class: "btn btn-primary" %>

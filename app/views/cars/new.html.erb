@@ -8,9 +8,8 @@
           <%= f.input :seats%>
           <%= f.input :year%>
           <%= f.input :category%>
-          <%= f.input :photo, as: :file %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.input :price%>
-          <%= f.input :location%>
           <%= f.submit class: "btn btn-dark" %>
         <% end %>
       </div>

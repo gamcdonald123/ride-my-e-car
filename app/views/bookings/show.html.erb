@@ -4,7 +4,7 @@
 
   <br>
     <div class="card border border-dark border-2 rounded-2 shadow p-3 mb-5 bg-body rounded" style="width: 30rem;">
-      <%= image_tag @booking.car.image_url, class: "card-img-top", alt: "..." %>
+      <%= cl_image_tag @booking.car.photos, class: "card-img-top", alt: "..." %>
       <div class="card-body">
 
         <div class="d-flex justify-content-between text-align-center">

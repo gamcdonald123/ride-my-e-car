@@ -22,9 +22,9 @@
         <% @cars.each do |car| %>
           <div class="col-lg-4 justify-content-center mb-4">
             <div class="card shadow justify-content-center">
-              <% if car.image_url %>
-                <%= image_tag car.image_url, class: "card-img-top", style: "height: 9rem; object-fit: cover;" %>
-              <% else %>
+              <% if car.photos.attached? %>
+                <%= cl_image_tag(car.photos.first.key, :height => 300, :crop => :fit, :class => "card-img-top") %>
+                <% else %>
               <%= image_tag("default_img.jpeg") %>
               <% end %>
               <div class="card-body mx-auto p-3 justify-content-center">
