@@ -34,7 +34,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.user = current_user
-    @car.location = current_user.postcode.capitalize
+    @car.location = current_user.postcode
     if @car.save
       redirect_to car_path(@car)
     else

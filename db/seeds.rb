@@ -44,10 +44,10 @@ car_images = [
 puts "Seeding..."
 puts "Creating users..."
 10.times do
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "password")
+  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "password", postcode: postcodes_in_london.sample)
 end
 
-User.create(first_name: "Guy", last_name: "McDonald", email: "gamcdonald@icloud.com", password: "password", postcode: "N5 1QZ")
+User.create(first_name: "Guy", last_name: "McDonald", email: "gamcdonald@icloud.com", password: "password", postcode: postcodes_in_london.sample)
 
 puts "Creating cars..."
 
