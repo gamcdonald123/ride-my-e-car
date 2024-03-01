@@ -28,6 +28,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    # test
   end
 
   def update
