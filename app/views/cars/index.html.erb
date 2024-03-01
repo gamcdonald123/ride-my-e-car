@@ -4,10 +4,10 @@
       <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
               params[:query],
-              class: "form-control m-1",
+              class: "form-control",
               placeholder: "Search by make, model or location"
           %>
-        <%= submit_tag "Search", name: "", class: "btn btn-dark m-1" %>
+        <%= submit_tag "Search", name: "", class: "btn btn-dark" %>
       <% end %>
   </div>
 </div>
@@ -20,21 +20,20 @@
           </div>
         <% end %>
         <% @cars.each do |car| %>
-          <div class="col-lg-4 mb-3">
-            <div class="card shadow p-2">
+          <div class="col-lg-4 mb-4">
+            <div class="card shadow p-3">
               <% if car.image_url %>
                 <%= image_tag car.image_url, class: "card-img-top", style: "height: 9rem; object-fit: cover;" %>
               <% else %>
               <%= image_tag("default_img.jpeg") %>
               <% end %>
-
               <div class="card-body">
                 <h3 class="card-title"> <%="#{car.make} #{car.model}" %> </h2>
 
                 <ul class="list-unstyled">
                   <li class="p-2"><%= car.year %> </li>
                   <li class="p-2"><%= number_to_currency(car.price.round(1), unit: "£")%>/day </li>
-                  <%= link_to"View",car_path(car), class: "view-btn btn btn-dark px-5 mt-4" %>
+                  <%= link_to"View",car_path(car), class: "view-btn btn btn-dark px-5 mt-3" %>
                 </ul>
 
               </div>
