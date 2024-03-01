@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :cars do
     resources :bookings, only: [:new, :create]
+    resources :reviews, only: [:create]
   end
 
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]
