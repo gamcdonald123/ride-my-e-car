@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row justify-content-center rounded">
+  <div class="row justify-content-center rounded mb-4">
   <div class="col-sm-8 my-3">
       <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
@@ -32,7 +32,7 @@
                     <div class ="mx-auto p-2">
                 <ul class="list-unstyled">
                   <li class="p-1"><i class="fa-solid fa-calendar-days"></i> <%= car.year %> </li>
-                  <li class="p-1"><i class="fa-solid fa-money-bill"></i>  <%= number_to_currency(car.price.round(1), unit: "£")%>/day </li>
+                  <li class="p-1"><i class="fa-solid fa-money-bill"></i>  <%= number_to_currency(car.price, unit: "£")%>/day </li>
                   <div class= "mx-auto p-2">
                   <%= link_to"View",car_path(car), class: "view-btn btn btn-dark px-5 mt-3 " %>
                   </div>
