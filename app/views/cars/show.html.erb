@@ -36,11 +36,13 @@
         </a>
       </div>
     </div>
+
     <div class="col-md-4">
       <div class='d-flex flex-column justify-content-between h-100'>
+
         <div>
           <h2 class="card-title"><%="#{@car.make} #{@car.model}" %> </h2>
-          <h4 class="mb-5"><i class="fa-solid fa-location-dot"> </i> <%= @car.location.capitalize %> </h4>
+          <h4 class="mb-5"><i class="fa-solid fa-location-dot"> </i> <%= @car.location.upcase %> </h4>
           <div class="d-flex align-items-end justify-content-start w-100">
             <div class="me-5 pt-5">
               <p><i class="fa-solid fa-car"> </i> <%= @car.category.capitalize %> </p>
@@ -52,6 +54,7 @@
             </div>
           </div>
         </div>
+
         <div class="border border-black p-3 rounded">
           <%= simple_form_for [@car, @booking] do |f|%>
             <%= f.input :start_date, html5: true %>
@@ -60,6 +63,7 @@
           <% end %>
         </div>
       </div>
+
     </div>
               </div>
           </div>
